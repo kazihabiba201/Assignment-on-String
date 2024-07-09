@@ -33,7 +33,7 @@
 // Output: "bac"
 // Explanation: After shuffling, each character remains in its position
 
-Solution:
+//Solution:
 
 /**
  * @param {string} s - The input string to be shuffled.
@@ -41,12 +41,11 @@ Solution:
  * @return {string} - The shuffled string.
  */
 function restoreString(s, indices) {
-
     let shuffled = new Array(s.length);
     
     // Iterate through each character in the string
     for (let i = 0; i < s.length; i++) {
-       // Place each character at the new position
+         // Place each character at the new position
         shuffled[indices[i]] = s[i];
     }
     
@@ -54,23 +53,10 @@ function restoreString(s, indices) {
     return shuffled.join('');
 }
 
-function getUserInput() {
-    // The string input
-    let s = prompt("Enter the string:");
-    
-//The indices array input
-    let inputOfIndices = prompt("Enter the indices array as comma-separated values:");
-    let indices = inputOfIndices.split(',').map(Number);
-    
-    // Call the restoreString function with the inputs
-    let result = restoreString(s, indices);
-    
-    // Display the result
-    console.log(result);
-}
 
-
-getUserInput();
+console.log(restoreString("mamacode", [4,5,6,7,0,1,2,3])); // Output: "codemama"
+console.log(restoreString("dosta", [4,0,1,2,3])); // Output: "ostad"
+console.log(restoreString("abc", [1,0,2])); // Output: "bac"
 
 //Time Complexity: O(n)
 //Space Complexity: O(n)
